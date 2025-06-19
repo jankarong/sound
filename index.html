@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>音频播放器</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .audio-item {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .audio-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+            text-transform: capitalize;
+        }
+
+        audio {
+            width: 100%;
+            outline: none;
+        }
+
+        .audio-description {
+            font-size: 14px;
+            color: #666;
+            margin-top: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🎵 自然音效播放器</h1>
+
+        <div class="audio-item">
+            <div class="audio-title">🔥 篝火声</div>
+            <audio controls preload="metadata">
+                <source src="crackling-fire.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+            <div class="audio-description">温暖的篝火噼啪声，营造舒适氛围</div>
+        </div>
+
+        <div class="audio-item">
+            <div class="audio-title">🌧️ 温柔雨声</div>
+            <audio controls preload="metadata">
+                <source src="gentle-rain.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+            <div class="audio-description">轻柔的雨滴声，帮助放松和专注</div>
+        </div>
+
+        <div class="audio-item">
+            <div class="audio-title">🏞️ 河边自然声</div>
+            <audio controls preload="metadata">
+                <source src="nature-sound-near-river.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+            <div class="audio-description">河流旁的自然环境音，带来宁静感受</div>
+        </div>
+
+        <div class="audio-item">
+            <div class="audio-title">🌳 春日森林</div>
+            <audio controls preload="metadata">
+                <source src="spring-forest-nature.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放。
+            </audio>
+            <div class="audio-description">春天森林中的鸟鸣与自然声响</div>
+        </div>
+    </div>
+
+    <script>
+        // 添加一些交互功能
+        document.querySelectorAll('audio').forEach(audio => {
+            audio.addEventListener('loadstart', function () {
+                console.log('开始加载:', this.src);
+            });
+
+            audio.addEventListener('error', function () {
+                console.error('加载错误:', this.src);
+                this.parentElement.querySelector('.audio-description').innerHTML =
+                    '<span style="color: red;">⚠️ 音频文件加载失败</span>';
+            });
+        });
+    </script>
+</body>
+
+</html>
