@@ -104,6 +104,15 @@
             </audio>
             <div class="audio-description">A satisfying smashing sound effect</div>
         </div>
+
+        <div class="audio-item">
+            <div class="audio-title">😡 Breaking Sound</div>
+            <audio controls preload="metadata">
+                <source src="break-it.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="audio-description">An angry breaking sound</div>
+        </div>
     </div>
 
     <script>
@@ -118,7 +127,7 @@
                 this.parentElement.querySelector('.audio-description').innerHTML =
                     '<span style="color: red;">⚠️ Audio file failed to load</span>';
             });
-        });
+    });
     </script>
 </body>
 
